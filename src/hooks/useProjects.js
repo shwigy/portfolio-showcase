@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react'
 import seedData from '../../db.json'
 
-const STORAGE_KEY = 'portfolio-showcase-projects'
+const STORAGE_KEY = 'portfolio-showcase-projects-v2'
 
 function loadInitialProjects() {
   const stored = localStorage.getItem(STORAGE_KEY)
