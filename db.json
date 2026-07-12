@@ -1,0 +1,25 @@
+{
+  "projects": [
+    {
+      "id": 1,
+      "title": "Weather Alerts App",
+      "description": "Fetches live weather alerts from the National Weather Service API.",
+      "tech": "HTML, CSS, JavaScript, Fetch API",
+      "link": "https://github.com"
+    },
+    {
+      "id": 2,
+      "title": "Dictionary App",
+      "description": "React-powered dictionary with definitions, phonetics, and synonyms.",
+      "tech": "React, CSS Modules, Fetch API",
+      "link": "https://github.com"
+    },
+    {
+      "id": 3,
+      "title": "Product Dashboard",
+      "description": "Dynamic e-commerce dashboard with conditional rendering and Material UI.",
+      "tech": "React, Material UI, CSS Modules",
+      "link": "https://github.com"
+    }
+  ]
+}
