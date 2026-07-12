@@ -1,16 +1,43 @@
-# React + Vite
+# Personal Project Showcase App
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A single-page React app for showcasing projects: view a list, search it, add
+new projects on the fly, and click through to a project's detail page.
 
-Currently, two official plugins are available:
+## Features
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+- Landing page listing projects in a card layout (inspired by the design mock-up)
+- Add Project form with validation
+- Live search/filter by title or description
+- Project detail view via React Router (`/projects/:id`)
+- Responsive layout for mobile screens
+- Projects persist to `localStorage`
 
-## React Compiler
+## Getting Started
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+```bash
+npm install
+npm run dev      # start dev server (http://localhost:5173)
+npm test         # run the Vitest + React Testing Library suite
+npm run build    # production build
+```
 
-## Expanding the ESLint configuration
+## Project Structure
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+```
+src/
+  components/   Header, AddProjectForm, SearchBar, ProjectList, ProjectCard, ProjectDetail
+  hooks/        useProjects — owns project state, persists to localStorage
+  tests/        Vitest + React Testing Library specs
+  App.jsx       Lifts shared state (projects, search term) and defines routes
+db.json         Seed data (also works with `npm run server` via json-server)
+```
+
+State lives in `App.jsx`, the nearest common parent of the components that
+need it (the form, search bar, and list); each component manages only its own
+local input state otherwise.
+
+## Known Limitations
+
+- Data is stored in `localStorage`, not a real backend — it won't sync across
+  devices/browsers.
+- No editing or deleting existing projects, and no authentication.
